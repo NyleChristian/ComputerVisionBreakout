@@ -1,0 +1,8 @@
+# path to hands dataset
+path: C:\Users\Nyle\Documents\ResumeProjects\ComputerVisionBreakout\Dataset_hands
+
+train: train
+val: test
+
+nc: 1
+names: ['hand']
