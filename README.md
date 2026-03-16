@@ -7,11 +7,13 @@ input into paddle movement in a classic Breakout-style game.
 
 The goal of the project was to experiment with different computer vision
 models and frameworks to determine which approach provides the most
-reliable and low-latency detection pipeline for real-time interaction.
+reliable and low‑latency detection pipeline for real‑time interaction.
 
 The system processes live camera frames, detects relevant visual signals
 such as hand position or pose landmarks, and converts those signals into
 control inputs that move the game paddle automatically.
+
+Note: Still working on coming up actual game that will overlay on the live webcam stream so that the game can me played...
 
 ------------------------------------------------------------------------
 
@@ -32,13 +34,13 @@ The system follows a typical AI perception pipeline:
 1.  **Video Capture**
     -   Webcam frames are captured in real time using OpenCV.
 2.  **Visual Detection**
-    -   Multiple computer vision models were tested to identify hand or
-        body motion.
+    -   Multiple computer vision models are used to identify hand motion
+        or pose landmarks.
 3.  **Feature Extraction**
     -   Detected landmarks or objects are converted into coordinates
         representing player motion.
 4.  **Decision Logic**
-    -   The paddle position is calculated based on detected movement.
+    -   Paddle position is calculated based on detected hand movement.
 5.  **Game Control**
     -   The system sends automated keyboard commands to control the
         game.
@@ -47,20 +49,73 @@ The system follows a typical AI perception pipeline:
 
 ## Models and Frameworks Evaluated
 
-### MediaPipe Hand / Pose Tracking
-
-The project explored real-time hand and body landmark detection using
-MediaPipe to track motion and determine paddle movement.
+To determine the most effective detection approach for real-time
+gameplay control, multiple computer vision frameworks and model
+configurations were tested.
 
 ### YOLO Object Detection
 
-Generic YOLO models were evaluated to detect objects within the video
-frame for potential gameplay control.
+Generic YOLO object detection models were evaluated for detecting
+relevant visual elements within the gameplay environment.
+
+To compare performance and latency tradeoffs, multiple YOLO model sizes
+were tested:
+
+-   **YOLO Nano**
+-   **YOLO Small**
+-   **YOLO Large**
+
+Smaller models provided faster inference suitable for real-time
+processing, while larger models provided improved detection accuracy but
+required more computational resources.
 
 ### YOLO Pose Estimation
 
-YOLO Pose was explored as an alternative for detecting body keypoints
-and motion using pose estimation techniques.
+YOLO Pose models were also evaluated to detect body keypoints and
+estimate hand motion. Pose-based detection proved to be highly reliable
+for tracking hand movement used to control the paddle.
+
+### MediaPipe Hand Tracking
+
+MediaPipe provides pretrained models for real-time hand tracking and
+pose estimation. Because these models are already pretrained and
+optimized for landmark detection, traditional object detection metrics
+such as mAP were not calculated in this experiment. Instead, MediaPipe
+performance was evaluated qualitatively based on tracking stability and
+responsiveness.
+
+------------------------------------------------------------------------
+
+## Model Performance Comparison
+
+  -----------------------------------------------------------------------
+  Model             mAP50             mAP50-95          Notes
+  ----------------- ----------------- ----------------- -----------------
+  YOLO (Generic     0.70              0.40              Tested across
+  Object Detection)                                     Nano, Small, and
+                                                        Large
+                                                        configurations
+
+  YOLO Pose         0.90              0.92              Provided strong
+                                                        pose landmark
+                                                        detection for
+                                                        motion tracking
+
+  MediaPipe         N/A               N/A               Pretrained hand
+                                                        tracking model
+                                                        evaluated
+                                                        qualitatively
+  -----------------------------------------------------------------------
+
+### Metric Definitions
+
+-   **mAP50** -- Mean Average Precision at an Intersection over Union
+    (IoU) threshold of 0.5\
+-   **mAP50-95** -- Mean Average Precision averaged across IoU
+    thresholds from 0.5 to 0.95
+
+These metrics are commonly used to evaluate object detection and pose
+estimation models.
 
 ------------------------------------------------------------------------
 
@@ -104,3 +159,8 @@ Possible extensions include:
 -   Implementing trajectory prediction for smoother paddle control
 -   GPU acceleration for faster inference
 -   Adding reinforcement learning for autonomous gameplay
+
+------------------------------------------------------------------------
+
+## Demo
+Coming up
