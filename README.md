@@ -147,3 +147,6 @@ Possible extensions include:
 
 ## Demo
 Coming up
+<p align="center">
+  <img src="Screen-Recording.gif" alt="Live YOLO Hand Sign Detection Demo" width="600">
+</p>

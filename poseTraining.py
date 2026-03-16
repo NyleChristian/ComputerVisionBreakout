@@ -2,17 +2,17 @@ from ultralytics import YOLO
 
 def main():
 
-    model = YOLO("yolo26n-pose.pt")
+    model = YOLO("yolo26m-pose.pt")
 
     results = model.train(
         data = "hand-keypoints.yaml",
-        epochs=50,
+        epochs=100,
         imgsz=1000, 
-        batch=24,
+        batch=6,
         patience=20,
         device=0,
 
-        workers=0,          # FIX 2: Forces data loading on the main thread (Fixes Windows IPC crashes)
+        workers=4,          # FIX 2: Forces data loading on the main thread (Fixes Windows IPC crashes)
         
     )
 
