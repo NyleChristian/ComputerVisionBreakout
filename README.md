@@ -85,37 +85,20 @@ performance was evaluated qualitatively based on tracking stability and
 responsiveness.
 
 ------------------------------------------------------------------------
-
 ## Model Performance Comparison
 
-  -----------------------------------------------------------------------
-  Model             mAP50             mAP50-95          Notes
-  ----------------- ----------------- ----------------- -----------------
-  YOLO (Generic     0.70              0.40              Tested across
-  Object Detection)                                     Nano, Small, and
-                                                        Large
-                                                        configurations
-
-  YOLO Pose         0.90              0.92              Provided strong
-                                                        pose landmark
-                                                        detection for
-                                                        motion tracking
-
-  MediaPipe         N/A               N/A               Pretrained hand
-                                                        tracking model
-                                                        evaluated
-                                                        qualitatively
-  -----------------------------------------------------------------------
+| Model                        | mAP@50 | mAP@50–95 | Notes |
+|------------------------------|-------:|----------:|------|
+| YOLO (Generic Object Detection) | 0.70  | 0.40 | Tested using Nano, Small, and Large model variants |
+| YOLO Pose                    | 0.90  | 0.92 | Provided strong pose landmark detection for motion tracking |
+| MediaPipe                    | N/A   | N/A  | Pretrained hand tracking model evaluated qualitatively |
 
 ### Metric Definitions
 
--   **mAP50** -- Mean Average Precision at an Intersection over Union
-    (IoU) threshold of 0.5\
--   **mAP50-95** -- Mean Average Precision averaged across IoU
-    thresholds from 0.5 to 0.95
+- **mAP@50** – Mean Average Precision at an Intersection over Union (IoU) threshold of 0.5  
+- **mAP@50–95** – Mean Average Precision averaged across IoU thresholds from 0.5 to 0.95
 
-These metrics are commonly used to evaluate object detection and pose
-estimation models.
+
 
 ------------------------------------------------------------------------
 
