@@ -9,3 +9,4 @@ yolo26m-pose.pt
 yolo26n-pose.pt
 yolo26n.pt
 *.pt
+mediapipe2.py
