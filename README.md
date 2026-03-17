@@ -8,7 +8,7 @@ and intuitive way to interact with classic 'Breakout' gameplay through high-spee
 visual perception.
 
 The system processes an incoming webcam feed at 30 FPS, detecting relevant visual
-signals such as hand position or keypoints for hand tracking, which is used to 
+signals such as hand position or keypoints for hand tracking, which are used to 
 control the paddle in real time with ease.
 
 Low-latency and high-speed visual tracking were both essential in making the motion 
