@@ -2,15 +2,17 @@ from ultralytics import YOLO
 
 def main():
 
-    model = YOLO("yolo11n.pt")
+    model = YOLO("yolo26x.pt")
 
     results = model.train(
         data = "data.yaml",
         epochs=100,
-        imgsz=800, 
-        batch=-1,
+        imgsz=1000, 
+        batch=6,
         patience=20,
         device=0,
+
+        workers=8, 
         
     )
 

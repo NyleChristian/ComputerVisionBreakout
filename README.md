@@ -1,17 +1,20 @@
 # Computer Vision Breakout -- AI-Controlled Gameplay
 
-This project explores how computer vision and AI-based perception
-systems can be used to interact with and control a game in real time.
-The system uses a webcam feed to detect hand motion and translate visual
-input into paddle movement in a classic Breakout-style game.
+Traditional gaming often relies on hardware-heavy inputs, such as from 
+keyboards or controllers. This project explores a software based approach
+to augmented reality, using bounding box estimation to create a low-latence,
+webcam-based, motion control system. The goal is to provide a more inclusive
+and intuitive way to interact with classic 'Breakout' gameplay through high-speed
+visual perception.
 
-The goal of the project was to experiment with different computer vision
-models and frameworks to determine which approach provides the most
-reliable and low‑latency detection pipeline for real‑time interaction.
+The system processes an incoming webcam feed at 30 FPS, detecting relevant 
+visual signals such as hand position or keypoints for hand tracking, which 
+is used to control the paddle in real time with ease. 
 
-The system processes live camera frames, detects relevant visual signals
-such as hand position or pose landmarks, and converts those signals into
-control inputs that move the game paddle automatically.
+Low-latency and high-speed visual tracking were both essential in making the 
+motion controls feel fluid and enjoyable, so I tested and compared various models 
+and detection solutions for mapping the paddle to the on-screen hand. 
+
 
 <p align="center">
   <img src="breakoutDemo.gif" alt="Live YOLO Hand Sign Detection Demo" width="600">
@@ -35,7 +38,7 @@ control inputs that move the game paddle automatically.
 The system follows a typical AI perception pipeline:
 
 1.  **Video Capture**
-    -   Webcam frames are captured in real time using OpenCV.
+    -   Webcam frames @ 30 FPS are captured in real time using OpenCV.
 2.  **Visual Detection**
     -   Multiple computer vision models are used to identify hand motion
         or pose landmarks.
@@ -43,7 +46,8 @@ The system follows a typical AI perception pipeline:
     -   Detected landmarks or objects are converted into coordinates
         representing player motion.
 4.  **Decision Logic**
-    -   Paddle position is calculated based on detected hand movement.
+    -   Paddle position is calculated based on detected hand movement. The paddle slides 
+        to the average center of the hand's bounding box instead of jumping to prevent "jittery" motion.
 5.  **Game Control**
     -   The system sends automated keyboard commands to control the
         game.
@@ -64,9 +68,9 @@ relevant visual elements within the gameplay environment.
 To compare performance and latency tradeoffs, multiple YOLO model sizes
 were tested:
 
--   **YOLO Nano**
--   **YOLO Small**
--   **YOLO Large**
+-   **YOLO26 Nano**
+-   **YOLO26 Small**
+-   **YOLO26 Large**
 
 Smaller models provided faster inference suitable for real-time
 processing, while larger models provided improved detection accuracy but
