@@ -7,14 +7,13 @@ webcam-based, motion control system. The goal is to provide a more inclusive
 and intuitive way to interact with classic 'Breakout' gameplay through high-speed
 visual perception.
 
-The system processes an incoming webcam feed at 30 FPS, detecting relevant 
-visual signals such as hand position or keypoints for hand tracking, which 
-are used to control the paddle in real time with ease. 
+The system processes an incoming webcam feed at 30 FPS, detecting relevant visual
+signals such as hand position or keypoints for hand tracking, which is used to 
+control the paddle in real time with ease.
 
-Low-latency and high-speed visual tracking were both essential in making the 
-motion controls feel fluid and enjoyable, so I tested and compared various models 
-and detection solutions for mapping the paddle to the on-screen hand. 
-
+Low-latency and high-speed visual tracking were both essential in making the motion 
+controls feel fluid and enjoyable, so I tested and compared various models and 
+detection solutions for mapping the paddle to the on-screen hand.
 
 <p align="center">
   <img src="breakoutDemo.gif" alt="Live YOLO Hand Sign Detection Demo" width="600">
