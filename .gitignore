@@ -2,3 +2,12 @@ runs
 archive
 .venv
 __pycache__
+yolo11l.pt
+yolo11m.pt
+yolo11n.pt
+yolo26m-pose.pt
+yolo26n-pose.pt
+yolo26n.pt
+yoloRun.py
+Screen-Recording.gif
+breakoutDemo.gif

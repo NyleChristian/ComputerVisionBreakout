@@ -4,7 +4,8 @@ from ultralytics import YOLO
 import math
 import random
 
-MODEL_PATH   = "runs/detect/train5/weights/best.pt"  
+MODEL_PATH   = "C:\\Users\\Nyle\\Documents\\ResumeProjects\\ComputerVisionBreakout\\runs\\pose\\train15\\weights\\best.pt"  
+#MODEL_PATH = "C:\\Users\\Nyle\\Documents\\ResumeProjects\\ComputerVisionBreakout\\runs\\detect\\train\\weights\\best.pt"
 CAMERA_INDEX = 0
 WIN_W, WIN_H = 1280, 720
 

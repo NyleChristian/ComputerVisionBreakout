@@ -13,7 +13,10 @@ The system processes live camera frames, detects relevant visual signals
 such as hand position or pose landmarks, and converts those signals into
 control inputs that move the game paddle automatically.
 
-Note: Still working on coming up actual game that will overlay on the live webcam stream so that the game can me played...
+<p align="center">
+  <img src="breakoutDemo.gif" alt="Live YOLO Hand Sign Detection Demo" width="600">
+</p>
+
 
 ------------------------------------------------------------------------
 

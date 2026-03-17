@@ -1,7 +1,15 @@
+import sys
+import pathlib
+
+sys.modules['pathlib._local'] = pathlib
+pathlib.PosixPath = pathlib.WindowsPath
+
 import cv2
 from ultralytics import YOLO
 from PIL import Image
 import time
+import pathlib
+
 
 def run_live_detection(model_path, webcam_index=0):
     # 1. Load your custom-trained YOLO11m model
@@ -92,6 +100,6 @@ def run_live_detection(model_path, webcam_index=0):
 
 if __name__ == "__main__":
     # UPDATE THIS PATH to your new runs folder!
-    CUSTOM_WEIGHTS_PATH = "C:\\Users\\Nyle\\Documents\\ResumeProjects\\ComputerVisionBreakout\\runs\\pose\\train9\\weights\\best.pt" 
+    CUSTOM_WEIGHTS_PATH = "C:\\Users\\Nyle\\Documents\\ResumeProjects\\ComputerVisionBreakout\\runs\\pose\\train15\\weights\\best.pt" 
     
     run_live_detection(CUSTOM_WEIGHTS_PATH)
