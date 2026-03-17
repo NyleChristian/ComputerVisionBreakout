@@ -1,5 +1,5 @@
 # path to hands dataset
-path: C:\Users\Nyle\Documents\ResumeProjects\ComputerVisionBreakout\Dataset_hands
+path: C:\Workspace\repos\ComputerVisionBreakout\archive
 
 train: train
 val: test
