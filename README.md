@@ -11,7 +11,7 @@ The system processes an incoming webcam feed at 30 FPS, detecting relevant visua
 signals such as hand position or keypoints for hand tracking, which are used to 
 control the paddle in real time with ease.
 
-Low-latency and high-speed visual tracking were both essential in making the motion 
+Low-latency and high-speed visual tracking are both essential in making the motion 
 controls feel fluid and enjoyable, so I tested and compared various models and 
 detection solutions for mapping the paddle to the on-screen hand.
 
